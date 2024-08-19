@@ -1,0 +1,172 @@
+html {
+  width: 100%;
+  height: calc(100vh - 42px);
+}
+
+body {
+  height: 100%;
+  width: 100%!important;
+  margin: 0;
+  padding: 0;
+}
+
+#micro-app {
+  height: 100%;
+}
+
+#search-section {
+  padding: 10px 20px 2px;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 1px 0 0 #dcdfe6;
+
+  .t-select__wrap {
+    width: initial;
+    min-width: 100px;
+
+    .t-input {
+      width: 100%;
+      height: 30px;
+      display: flex;
+
+      &__prefix {
+        display: flex;
+      }
+    }
+
+    .t-select-input--empty {
+      .t-input {
+        .t-input__prefix {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  & > * {
+    margin-bottom: 8px;
+    margin-right: 8px;
+  }
+}
+
+.operate-section {
+  padding: 10px 20px;
+  background-color: #f0f2f5;
+  display: flex;
+}
+
+.table-section {
+  flex: 1;
+  padding: 0 12px 10px;
+  background-color: #f0f2f5;
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+
+  .vxe-table-box {
+    flex: 1;
+    min-height: 0;
+
+    .vxe-table {
+      .vxe-checkbox--icon {
+        display: initial;
+      }
+
+      .vxe-icon-checkbox-checked {
+        &::before {
+          color: var(--td-brand-color-8);
+          background-color: #fff;
+          border: none;
+          content: "";
+        }
+      }
+
+      .vxe-icon-checkbox-indeterminate {
+        &::before {
+          color: var(--td-brand-color-8);
+          background-color: #fff;
+          border: none;
+          content: "";
+        }
+      }
+
+      .vxe-cell--checkbox.is--checked {
+        color: var(--td-brand-color-8);
+      }
+
+      &--header {
+        thead {
+          background-color: #fff;
+
+          th {
+            line-height: 40px;
+            background-image: none;
+            padding: 0;
+            position: relative;
+
+            &::after {
+              display: block;
+              position: absolute;
+              content: " ";
+              top: 50%;
+              transform: translateY(-6px);
+              right: 0;
+              height: 12px;
+              width: 1px;
+              background-color: #d9dbde;
+            }
+
+            .vxe-cell {
+              &--title {
+                color: #0b1019;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .pagination-box {
+    padding: 8px 12px;
+    height: 48px;
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 0 0 4px 4px;
+  }
+}
+
+// 全局Dialog
+.oa-dialog {
+  &.full-screen {
+    .t-dialog__position {
+      align-items: stretch !important;
+    }
+  }
+
+  .t-dialog {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+      padding: 17px 24px;
+      border-bottom: 1px solid #e6e8e6;
+    }
+
+    &__body {
+      flex: 1;
+      padding: 0;
+    }
+
+    &__footer {
+      padding: 20px 24px;
+      display: flex;
+      justify-content: flex-end;
+      border-top: 1px solid #e6e8e6;
+      box-sizing: border-box;
+    }
+  }
+}
