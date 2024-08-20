@@ -3,11 +3,6 @@ import { useKeepAlive } from '@/stores/keepAlive'
 import { storeToRefs } from 'pinia'
 const aliveInstance = useKeepAlive()
 const { excludes } = storeToRefs(aliveInstance)
-async function test() {
-  const fn = await import('federation_provider/index')
-  console.log(fn.default)
-}
-test()
 </script>
 
 <template>

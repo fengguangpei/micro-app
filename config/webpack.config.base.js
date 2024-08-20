@@ -24,6 +24,14 @@ module.exports = {
     },
     extensions: ['.js', '.ts', '.vue', '.scss', '.css', '.d.ts']
   },
+  externals: {
+    vue: 'Vue',
+    'vue-router': 'VueRouter',
+    'vue-demi': 'VueDemi',
+    pinia: 'Pinia',
+    'xe-utils': 'XEUtils',
+    'vxe-table': 'VXETable'
+  },
   module: {
     rules: [
       {
@@ -97,20 +105,6 @@ module.exports = {
       filename: 'remoteEntry.js',
       remotes: {
         federation_provider: 'federation_provider@http://localhost:8080/remoteEntry.js'
-      },
-      shared: {
-        "vue": {
-          eager: true
-        },
-        "vue-router": {
-          eager: true
-        },
-        "pinia": {
-          eager: true
-        },
-        "element-plus": {
-          eager: true
-        }
       }
     })
   ],
