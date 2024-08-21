@@ -2,7 +2,6 @@ const { default: merge } = require('webpack-merge')
 const base = require('./webpack.config.base')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { DefinePlugin } = require('webpack')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 module.exports = merge(base, {
   mode: 'production',
   output: {
@@ -31,7 +30,6 @@ module.exports = merge(base, {
       __VUE_OPTIONS_API__: true,
       PRODUCTION: true
     }),
-    new BundleAnalyzerPlugin()
   ],
   optimization: {
     runtimeChunk: 'single',

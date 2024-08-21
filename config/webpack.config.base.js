@@ -30,7 +30,8 @@ module.exports = {
     'vue-demi': 'VueDemi',
     pinia: 'Pinia',
     'xe-utils': 'XEUtils',
-    'vxe-table': 'VXETable'
+    'vxe-table': 'VXETable',
+    'qiankun': 'qiankun'
   },
   module: {
     rules: [
