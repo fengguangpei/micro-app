@@ -4,7 +4,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import '@/assets/scss/Base.scss'
 import '@/assets/scss/Common.scss'
-import 'tdesign-vue-next/es/style/index.css';
+import 'tdesign-vue-next/es/style/index.css'
 import { type App } from 'vue'
 import APP from './App.vue'
 import RefreshPage from '@/components/RefreshPage.vue'
@@ -41,7 +41,9 @@ function initApp(element: HTMLDivElement | string) {
 }
 
 // qiankun
-window.__POWERED_BY_QIANKUN__ || initApp('#micro-app')
+if (window.__POWERED_BY_QIANKUN__) {
+  initApp('#micro-app')
+}
 export let $rootRouter: Router | null = null
 // bootstrap钩子
 export async function bootstrap() {
@@ -52,7 +54,7 @@ export async function mount(props: { container: HTMLDivElement }) {
   props.container.style.height = '100%'
   props.container.style.width = '100%'
   const element: HTMLDivElement | null = props.container.querySelector('#micro-app')
-  element && initApp(element)
+  if (element) initApp(element)
   return Promise.resolve(true)
 }
 // unmount钩子
@@ -73,7 +75,7 @@ export async function update(props: Record<string, unknown>) {
   }
   if (props.remount) {
     const element: HTMLDivElement | null = document.querySelector('#micro-app')
-    element && initApp(element)
+    if (element) initApp(element)
   }
   return Promise.resolve(true)
 }
