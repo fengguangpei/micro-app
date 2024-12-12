@@ -1,8 +1,9 @@
 import os
+import sys
 from obs import ObsClient
 
-ak = "2ULMZ2VH66TBXMVIEELC"
-sk = "goMsfxx2liycAWC5lcVQNxoIVXVG80gDfD0DbPrn"
+ak = sys.argv[1]
+sk = sys.argv[2]
 server = "https://obs.cn-south-1.myhuaweicloud.com"
 obsClient = ObsClient(access_key_id=ak, secret_access_key=sk, server=server)
 obsClient.putFile(bucketName='fenggp', objectKey='micro-app', file_path='dist/')
